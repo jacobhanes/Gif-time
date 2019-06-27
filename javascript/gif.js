@@ -10,7 +10,7 @@ console.log("im ready")
     function initializeButtons() {
         for (let i = 0; i < topics.length; i++){
             let starterButtons = $("<button class='starterButtons'>");
-            
+            starterButtons.attr("data-person", topics[i]);
             console.log(topics[i]);
             $("#buttons").append(starterButtons);
             starterButtons.text(topics[i]);
@@ -20,7 +20,17 @@ console.log("im ready")
     
     $(".starterButtons").on("click", function(){
         console.log("click");
-    })
+        const character = $(this).attr("data-person");
+        console.log(character);
+        const queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        character + "&api_key=y0ixuSXwdcTW93ow6ebIUxNV4O0pulFv&limit=10";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response){
+              console.log(response);
+          });
+    });
     
 
 
