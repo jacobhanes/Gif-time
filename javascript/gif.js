@@ -14,6 +14,7 @@ console.log("im ready")
     };
     initializeSearch();
     function initializeButtons() {
+        $("#buttons").empty();
         for (let i = 0; i < topics.length; i++){
             let starterButtons = $("<button class='starterButtons'>");
             starterButtons.attr("data-person", topics[i]);
@@ -57,6 +58,9 @@ console.log("im ready")
         console.log(newChallenger);
         topics.push(newChallenger);
         initializeButtons();
+        // const newButton = ("<button>");
+        // $("#buttons").append(newButton);
+        // newButton.text(newChallenger);
     })
     
     
