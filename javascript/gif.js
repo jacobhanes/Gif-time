@@ -11,7 +11,7 @@ console.log("im ready")
         $("#addItem").append(searchBar);
         $("#addItem").append(searchButton);
 
-    }
+    };
     initializeSearch();
     function initializeButtons() {
         for (let i = 0; i < topics.length; i++){
@@ -50,8 +50,14 @@ console.log("im ready")
           });
     });
     
-
-
+    $("#searchButton").on("click", function(){
+        console.log("make me a button");
+        
+        const newChallenger = $("input:text").val();
+        console.log(newChallenger);
+        topics.push(newChallenger);
+        initializeButtons();
+    })
     
     
     
