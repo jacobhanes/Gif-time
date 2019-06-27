@@ -5,8 +5,14 @@ console.log("im ready")
     
     const topics = ["Captain Falcon", "Falco", "Fox Mccloud", "Marth", "Mario", "Link", "Ganondorf"];
     
-    
-    
+    function initializeSearch () {
+        let searchBar = ("<input type='text'>")
+        let searchButton = ("<button id='searchButton'>Search</button>")
+        $("#addItem").append(searchBar);
+        $("#addItem").append(searchButton);
+
+    }
+    initializeSearch();
     function initializeButtons() {
         for (let i = 0; i < topics.length; i++){
             let starterButtons = $("<button class='starterButtons'>");
