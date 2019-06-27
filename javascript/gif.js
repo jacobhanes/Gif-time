@@ -21,10 +21,12 @@ console.log("im ready")
             console.log(topics[i]);
             $("#buttons").append(starterButtons);
             starterButtons.text(topics[i]);
+            initializeEvent();
+            
         }
     };
     initializeButtons();
-    
+    function initializeEvent(){ 
     $(".starterButtons").on("click", function(){
         console.log("click");
         $("#gifBox").empty();
@@ -50,7 +52,7 @@ console.log("im ready")
               }
           });
     });
-    
+}
     $("#searchButton").on("click", function(){
         console.log("make me a button");
         
@@ -58,9 +60,9 @@ console.log("im ready")
         console.log(newChallenger);
         topics.push(newChallenger);
         initializeButtons();
-        // const newButton = ("<button>");
+        // const newButton = ("<button class='starterButtons'>");
         // $("#buttons").append(newButton);
-        // newButton.text(newChallenger);
+        // newButton.text(newChallenger)
     })
     
     
