@@ -9,7 +9,7 @@ console.log("im ready")
     
     function initializeButtons() {
         for (let i = 0; i < topics.length; i++){
-            let starterButtons = $("<button>");
+            let starterButtons = $("<button class='starterButtons'>");
             
             console.log(topics[i]);
             $("#buttons").append(starterButtons);
@@ -18,7 +18,9 @@ console.log("im ready")
     };
     initializeButtons();
     
-    
+    $(".starterButtons").on("click", function(){
+        console.log("click");
+    })
     
 
 
